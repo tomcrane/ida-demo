@@ -1,0 +1,222 @@
+@import (less) "lib/normalize.css"; /* Normalize.css - render elements consistently and in line with standards */
+@import "lib/lesshat.less"; /* LESS Hat - collection of LESS mixins */
+@charset 'UTF-8';
+
+/* Replace these example styles with your app's styles */
+body {
+    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+    background-color: black;
+    font-weight:normal;
+    color: white;
+    position: absolute;
+    width:100%;
+    height:100%;
+
+    a {
+        color: #01579b;
+        text-decoration: none;
+        border-bottom: 1px dotted #01579b;
+    }
+
+    .btn {
+        cursor: pointer;
+        padding: 5px;
+        .border-radius(5px);
+        background-color: #333333;
+        color: #eeeeee;
+        .user-select(none);
+        &:hover { background-color: #555555; }
+        &:active { .box-shadow(inset 0px 1px 3px #111111); }
+    }
+
+    .feature {
+        padding: 15px;
+        margin-left:30%;
+        height:100%;
+        box-sizing:border-box;
+        position:relative;
+        h3 {
+            margin-top: 0;
+        }
+        .big-text {
+            font-size: 24pt;
+        }
+    }
+}
+
+.canvas {
+    color:white;
+    position: absolute;
+    top:0;
+    left:0;
+    cursor: pointer;
+    border: 1px solid gray;
+    background-color: gray;
+    box-shadow: 0 0 5px gray;
+    border-radius:4px;
+    overflow: hidden;
+    &:hover {
+      background-color: lightgray;
+      box-shadow: 0 0 12px white;
+    }
+    // &.blank {
+    //   background:red;
+    //   box-shadow: none;
+    //   border:none;
+    // }
+    // &.prohibited {
+    // }
+    img {
+      position:absolute;
+      left:0;
+      right:0;
+      bottom:0;
+      top:0;
+      width:100%;
+      opacity:1;
+      transition: all 0.2s ease-out;
+      // &.loading {
+      //   opacity:0;
+      //   transition: all 0.2s ease-out;
+      // }
+    }
+    // &.blank {
+    //   background-color: transparent;
+    //   border: 2px dashed gray;
+    //   border-radius: 
+    // }
+}
+
+.frame {
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    // border: 1px solid white;
+    .label {
+        bottom: 0;
+        font-weight: 100;
+        position: absolute;
+        text-align: center;
+        width:100%;
+        margin-bottom:0;
+        height:35px;
+    }
+}
+
+#controls {
+  min-width: 285px;
+  width:20%;
+  border-right: 1px solid gray;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 15px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position:fixed;
+}
+
+#example-container {
+    width:80%;
+    height:80%;
+    position:relative;
+    margin:0 auto;
+    overflow:hidden;
+    border: 1px solid gray;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display:block;
+}
+
+select {
+    width:100%;
+    color: black;
+}
+
+button {
+  color:black;
+  width:45%;
+}
+
+button.next:after {
+ content: ' ⇨'
+}
+button.previous:before{
+  content: '⇦ '
+}
+
+input {
+    color: black;
+}
+
+input[type=range]::-moz-range-track {
+    background-color: white;
+}
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " "; // 1
+    display: table; // 2
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+#images-list {
+  list-style: none;
+  padding:0;
+  li {
+    cursor: move;
+    padding: 0 10px;
+    border: 2px solid gray;
+    border-bottom: none;
+    background:black;
+    position:relative;
+    overflow:hidden;
+    &:hover {
+      border-color: deepskyblue;
+      border-bottom: 2px solid deepskyblue;
+    }
+    .layerthumb {
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height:100%;
+      width: 25px;
+      height: 25px;
+      border: 1px solid gray;
+      float:left;
+      background: gray;
+      box-shadow: 0 0 5px gray
+    }
+    input[type=checkbox] {
+      margin-top:10px;
+      background:red;
+      height: 25px;
+      width: 25px;
+      text-align:center;
+      vertical-align: middle;
+      float:left;
+    }
+    .layerName {
+      margin-top:10px;
+      margin-left: 60px;
+      margin-bottom: 5px;
+      span {
+        display:inline-block;
+        height:100%;
+      }
+    }
+    &:last-child {
+      border: 2px solid gray;
+    }
+  }
+}
