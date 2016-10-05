@@ -12,24 +12,10 @@ var App = {
 
     // Some choice fixture objects with real content.
     [
-      {url: 'https://dlcs.io/iiif-resource/iiifly/manifest/M-1011_R-127', label: 'IDA m1011 raw from DLCS'},
-      {url: 'https://tomcrane.github.io/scratch/manifests/ida/m1011-na.json', label: 'National Archives intro'},
-      {url: 'https://tomcrane.github.io/scratch/manifests/ida/m1011-san-juan-1920-22.json', label: 'San Juan 1920-1922'},
-      {url: 'https://tomcrane.github.io/scratch/manifests/ida/m1011-santa-fe-1910-30.json', label: 'Santa Fe 1910-1930'},
-      {url: 'https://tomcrane.github.io/scratch/manifests/ida/m1011-santa-fe-1910-30-annual-report-1914.json', label: 'Santa Fe Annual Report 1914'},
-      {url: 'https://dlcs.io/iiif-resource/iiifly/manifest/2016_01', label: 'IDA-2016-01'},
-      {url: 'https://dlcs.io/iiif-resource/iiifly/manifest/2016_02', label: 'IDA-2016-02'},
-      {url: 'https://dlcs.io/iiif-resource/iiifly/manifest/2016_03', label: 'IDA-2016-03'},
-      {url: 'http://dms-data.stanford.edu/data/manifests/BnF/jr903ng8662/manifest.json', label: 'Stanford DMS Manuscript (example of typical object)'},
-      {url: 'http://tomcrane.github.io/scratch/manifests/foldout-as-choice.json', label: 'Pseudo-Albert the Great (second canvas)'},
-      {url: 'http://demos.biblissima-condorcet.fr/iiif/metadata/BVMM/chateauroux/manifest.json', label: 'BNF Detail Images Demo (Chateauroux)'},
-      {url:'http://manifests.ydc2.yale.edu/manifest/Osbornfa1v2.json', label: "Yale Osborn with choice (see 53r)"},
-      {url: 'http://iiif.ub.uni-leipzig.de/0000000001/manifest.json', label: 'Leipzig Scroll'},
-      {url: 'http://oculus-dev.harvardx.harvard.edu/manifests/drs:5981093', label: 'Harvard Richardson 7'},
-      {url: 'https://data.ucd.ie/api/img/manifests/ucdlib:33064', label: 'University College Dublin (dcterms)'},
-      {url: 'http://www2.dhii.jp/nijl/NIJL0018/099-0014/manifest_tags.json', label: 'National Institute of Japanese Literature (rtl)'},
-      {url: 'http://digi.vatlib.it/iiif/MSS_Vat.lat.3225/manifest.json', label: 'Vatican Library (URL formatting)'},
-      {url: 'http://media.nga.gov/public/manifests/nga_highlights.json', label: 'NGA Highlights'}
+      {url: 'https://dlcs.io/iiif-resource/iiifly/manifest/M-1011_R-127', label: 'IDA Reel M-1011'},
+      {url: 'https://tomcrane.github.io/scratch/manifests/ida/m1011-na.json', label: 'IDA M-1011 NA Descrption'},
+      {url: 'https://tomcrane.github.io/scratch/manifests/ida/m1011-san-juan-1920-22.json', label: 'IDA M-1011 San Juan 1920-22'},
+      {url: 'https://tomcrane.github.io/scratch/manifests/ida/m1011-santa-fe-1910-30.json', label: "IDA M-1011 Santa Fe"}
     ].forEach(function(fixture) {
       $('<option>')
         .val(fixture.url)
@@ -159,7 +145,7 @@ var App = {
         frameClass: 'frame', //default set to 'frame'
         labelClass: 'label', //default set to 'label'
         viewportPadding: {  // in detail view, make sure this area is clear
-          top: 0,
+          top: 10,
           left: 10,
           right: 10,
           bottom: 20 // units in % of pixel height of viewport
@@ -271,7 +257,7 @@ var App = {
           listItem.append(label);
           listItem.prepend(layerThumb);
           if (image.getStatus() === 'drawn') {
-            layerThumb.attr('src', image.tileSource.url);
+            layerThumb.attr('src', image.thumbUrl);
           }
           listItem.prepend(checkbox);
           // listItem.append(sliderLabel);
